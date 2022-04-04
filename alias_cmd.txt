@@ -1,0 +1,48 @@
+# User specific aliases and functions
+## Colorize the ls output ##
+alias ls='ls --color=auto'
+alias lr='ls -lrth'
+alias ld='ls -d */'
+alias lld='ls -dl */'
+alias le='less' 
+#alias xgraph='/opt/ns-allinone-2.35/xgraph-12.2/xgraph'
+## Use a long listing format ##
+alias ll='ls -la'
+alias sth='ssh -X 10.53.131.113'
+ 
+## Show hidden files ##
+alias l.='ls -d .* --color=auto'
+
+
+## get rid of command not found ##
+alias cd..='cd ..'
+ 
+## a quick way to get out of current directory ##
+alias ..='cd ..'
+alias ...='cd ../../../'
+alias ....='cd ../../../../'
+alias .....='cd ../../../../'
+alias .4='cd ../../../../'
+alias .5='cd ../../../../..'
+## Colorize the grep command output for ease of use (good for log files)##
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+
+# do not delete / or prompt if deleting more than 3 files at a time #
+alias rm='rm -i --preserve-root'
+ 
+# confirmation #
+alias mv='mv -i'
+alias cp='cp -i'
+alias ln='ln -i'
+ 
+# Parenting changing perms on / #
+alias chown='chown --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chgrp='chgrp --preserve-root'
+
+# become root #
+alias root='sudo -i'
+alias su='sudo -i'
