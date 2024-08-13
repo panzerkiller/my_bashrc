@@ -19,9 +19,6 @@ Set-Alias le more
 # Use a long listing format
 function ll { Get-ChildItem -Force }
 
-# SSH command (Note: PowerShell does not have a built-in 'ssh' command, but if you have OpenSSH installed, this should work)
-Set-Alias sth "ssh -X 10.53.131.113"
-
 # Show hidden files
 function l. { Get-ChildItem -Force }
 
@@ -29,12 +26,12 @@ function l. { Get-ChildItem -Force }
 Set-Alias cd.. 'cd ..'
 
 # Quick ways to move up directories
-Set-Alias .. 'cd ..'
-Set-Alias ... 'cd ..\..\..'
-Set-Alias .... 'cd ..\..\..\..'
-Set-Alias ..... 'cd ..\..\..\..\..'
-Set-Alias .4 'cd ..\..\..\..\..'
-Set-Alias .5 'cd ..\..\..\..\..\..'
+function .. { Set-Location .. }
+function ... { Set-Location ../.. }
+function .... { Set-Location ../../.. }
+function ..... { Set-Location ../../../.. }
+function .4 { Set-Location ..\..\..\..\..}
+function .5 { Set-Location ..\..\..\..\..\..}
 
 # Colorize the grep command output (PowerShell equivalent would use 'Select-String', but it doesn't colorize by default)
 Set-Alias grep Select-String
@@ -57,3 +54,5 @@ Set-Alias chgrp 'Write-Host "PowerShell does not support chgrp"'
 # Become root (Equivalent in PowerShell would be starting a session as Administrator)
 Set-Alias root 'Start-Process PowerShell -Verb RunAs'
 Set-Alias su 'Start-Process PowerShell -Verb RunAs'
+
+function repo {set-location C:\xxx\repos}
